@@ -153,11 +153,18 @@ header nav .toggle-menu {
 header nav ul {
     display: flex;
 }
+header input[type=checkbox] {
+    display: none;
+}
+header input[type=checkbox] ~ label{
+    cursor: pointer;
+}
+
 @media (max-width: 767px) {
     header nav ul {
         display: none;
     }
-    header nav .toggle-menu:hover + ul {
+    header nav input[type=checkbox]:checked ~ ul{
         display: flex;
         flex-direction: column;
         top: 100%;
