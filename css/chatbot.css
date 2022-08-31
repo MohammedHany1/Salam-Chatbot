@@ -1,7 +1,6 @@
 @import url('//fonts.googleapis.com/earlyaccess/notokufiarabic.css'); 
 /* Start Global Variables */
 :root {
-    /* --main-color: #e99a24; */
     --main-color: #60bbe8;
     --second-color: #2a4e82;
     --transparent-color: rgba(255, 223, 128, 0.76);
