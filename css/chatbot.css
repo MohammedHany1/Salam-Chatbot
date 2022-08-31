@@ -3,6 +3,7 @@
 :root {
     /* --main-color: #e99a24; */
     --main-color: #60bbe8;
+    --second-color: #2a4e82;
     --transparent-color: rgba(255, 223, 128, 0.76);
     --section-padding: 100px;
 }
@@ -110,7 +111,6 @@ p {
 /* End Components */
 /* Start Header */
 header {
-    /* position: absolute; */
     left: 0;
     width: 100%;
     z-index: 2;
@@ -212,43 +212,35 @@ header nav .form i {
 /* End Header */
 /* Start Landing */
 .landing {
-    min-height: 100vh;
+    height: 100vh;
     background:white;
     background-size:cover;
     position: relative; 
-    padding-top: 40px;
+    padding: 40px 0;
+    box-sizing: content-box;
     overflow: hidden;
-}
-/* .landing .text {
-    position: absolute;
-    left: 0;
-    top: 50%;
-    width: 50%;
-    transform: translateY(-50%);
-    -webkit-transform: translateY(-50%);
-    -moz-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    -o-transform: translateY(-50%);
-    padding: 50px;
-    background-color: var(--transparent-color);
-    color: white;
     display: flex;
-    justify-content: flex-end;
-} */
-/* .landing .head {
-    text-align: center;
-    padding-bottom: var(--section-padding);
-} */
+}
 .landing .landing-container {    
     display: flex;
 }
 .landing .text-container {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
     align-items: center;
     width: 50%;
 }
+.landing .text-container .content {
+    line-height: 1.7;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    row-gap: 25px;
+}
 .landing .img-container {
     width: 50%;
+    overflow: hidden;
 }
 .landing .img-container {
     max-width: 50%;
@@ -274,89 +266,72 @@ header nav .form i {
         -o-transform: scale(1.1);
     }
 }
-@media (max-width: 767px) { 
-    .landing {
-        position: relative;
-    }
-    .landing .img-container img {
-        display: none;
+@media (max-width: 767px) {
+    .landing .landing-container {
+        flex-direction: column-reverse;
+        align-items: center;
+        width: 100%;
+        row-gap: 35px;
+    } 
+     .landing .img-container img {
+        width: 100%;
     }
     .landing .img-container {
-        width: 0;
-    }
+        max-width: 100%;
+        width: 100%;
+    } 
     .landing .text-container {
         width: 100%;
         text-align: center;
     }
-    .landing .text-container p {
-        width: 90%;
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        -webkit-transform: translate(-50%, -50%);
-        -moz-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-        -o-transform: translate(-50%, -50%);
 }
-}
-/* .landing .text .content h2 {
-    font-weight: normal;
-    font-size: 32px;
-    line-height: 1.5;
-    margin-bottom: 20px;
-}
-.landing .text .content p {
-    font-size: 14px;
-    line-height: 2;
-}
-.landing .change-background {
-    position: absolute;
-    top: 50%;
-    transform:translateY(-50%);
-    -webkit-transform:translateY(-50%);
-    -moz-transform:translateY(-50%);
-    -ms-transform:translateY(-50%);
-    -o-transform:translateY(-50%);
-    color: #ddd;
-}
-@media (max-width: 767px) {
-    .landing .change-background {
-        display: none;
-    }
-}
-.landing .fa-angle-left {
-    left: 30px;
-}
-.landing .fa-angle-right {
-    right: 30px;
-}
-.landing .bullets {
-    position: absolute;
-    left: 50%;
-    bottom: 30px;
-    transform: translateX(-50%);
-    -webkit-transform: translateX(-50%);
-    -moz-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    -o-transform: translateX(-50%);
+
+.landing .container .btn-chat {
+    display: block;
+    position: relative;
+    background-color: var(--second-color);
+    text-align: center;
+    width: fit-content;
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
 }
-.landing .bullets li {
-    width: 20px;
-    height: 20px;
-    border: 1px solid white;
-    border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
-    margin-right: 10px;
+.landing .container .btn-chat a{
+    z-index: 1;
+    padding: 15px 25px;
+    height: 100%;
+    text-decoration: none;
+    color: white;
 }
-.landing .bullets li.active {
+.landing .container .btn-chat a::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+    width: 0%;
+    height: 100%;
+    z-index: -1;
+    transition: all 0.4s ease-in;
+    -webkit-transition: all 0.4s ease-in;
+    -moz-transition: all 0.4s ease-in;
+    -ms-transition: all 0.4s ease-in;
+    -o-transition: all 0.4s ease-in;
+}
+.landing .container a:hover::before  {
+    width: 100%;    
     background-color: var(--main-color);
-    border-color: var(--main-color);
-} */
+
+}
 /* End Landing */
 /* Start Chatbot */
 .chatbot {
@@ -383,14 +358,6 @@ header nav .form i {
     padding-top: var(--section-padding);
     padding-bottom: var(--section-padding);
 }
-/* @media (min-width: 768px) {
-    .chatbot .services-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
-        grid-column-gap: 40px;
-        grid-row-gap: 60px;
-    }
-} */
 .us .person-container {
     display: flex;
     margin-left: auto;
@@ -459,9 +426,6 @@ header nav .form i {
     -ms-border-radius: 100%;
     -o-border-radius: 100%;
 }
-.us .person .text-container {
-
-}
 /* End Us */
 /* Start Footer */
 footer {
@@ -482,6 +446,14 @@ footer a{
     text-decoration: none;
     color: white;
 }
+footer a:hover {
+    color: var(--second-color);
+    transition: all 0.2s ease-in;
+    -webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    -ms-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
+}
 footer .line {
     padding-top: 40px;
     display: flex;
@@ -497,7 +469,7 @@ footer .line .text p {
     font-weight: 300;
 }
 footer .line .text p a {
-    color: rgb(86, 86, 86);
+    color: var(--second-color);
     font-weight: 500;
 }
 @media (max-width: 558px) {
