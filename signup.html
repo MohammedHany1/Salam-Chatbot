@@ -7,7 +7,8 @@
     <title>Chatbot</title>
     <!-- Main Template CSS File -->
     <link rel="stylesheet" href="css/chatbot.css">
-    <link rel="stylesheet" href="css/chat.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/signup.css">
     <!-- Font Awesome Library -->
     <link rel="stylesheet" href="css/all.min.css">
     <!-- Render All Elements Normally -->
@@ -26,10 +27,10 @@
                 <i class="fas fa-bars toggle-menu"></i>
                 <ul>
                     <li><a href="index.html">الصفحة الرئيسية</a></li>
-                    <li><a href="#" class="active">ابدأ الدردشة</a></li>
+                    <li><a href="chat.html">ابدأ الدردشة</a></li>
                     <li><a href="contact.html">تواصل معنا</a></li>
                     <li><a href="login.html">سجل الدخول</a></li>
-                    <li><a href="signup.html">التسجيل</a></li>
+                    <li><a href="signup.html" class="active">التسجيل</a></li>
                 </ul>
             </nav>
             <a href="index.html" class="logo">
@@ -38,29 +39,24 @@
         </div>
     </header>
     <!-- End Header -->
-    <!-- Start Chat -->
-    <div class="chat">
-        <div class="container">
-                <div class="chat-screen">
-                    <div class="messages-container">
-                       <div class="bot-msg">
-                            مرحبا بك انا سلام!
-                        </div>
-                        <div class="user-msg">
-                            اهلا يا سلام
-                        </div> 
-                    </div>
-                    
-                    <div class="form-container">
-                        <form action="">
-                            <input type="text" name="message">
-                            <input type="submit" value="ارسل">
-                        </form>
+    <!-- Start Signup -->
+        <div class="login-landing">
+            <div class="container">
+                <div class="info-container">
+                    <form action="">
+                        <input type="text" name="name" placeholder="اسم المستخدم" required>
+                        <input type="text" name="email" placeholder="الايميل" required>
+                        <input type="password" name="password" placeholder="كلمة المرور" required>
+                        <input type="password" name="check-password" placeholder="اعد ادخال كلمة المرور" required>
+                        <input type="submit" value="التسجيل">
+                    </form>
+                    <div class="text-container">
+                       <a href="login.html">هل لديك حساب بالفعل</a>
                     </div>
                 </div>
+            </div>
         </div>
-    </div>
-    <!-- End Chat -->
+    <!-- End Signup -->
     <!-- Start Footer -->
     <footer>
         <div class="container">
